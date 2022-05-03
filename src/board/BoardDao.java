@@ -191,7 +191,7 @@ public class BoardDao {
 	public int updateCnt(int num) {
 		Connection con = null;
 		PreparedStatement pstmt = null;
-		String query = "DELETE FROM BOARD WHERE NUM=?";
+		String query = "UPDATE BOARD SET CNT = CNT + 1 WHERE NUM=?";
 		int ret = -1; // 쿼리가 정상적으로 안 들어가면 -1이 반환됨.
 		try {
 			con = ju.getConnection();
@@ -225,7 +225,7 @@ public class BoardDao {
 	public int delete(int num) {
 		Connection con = null;
 		PreparedStatement pstmt = null;
-		String query = "UPDATE BOARD SET CNT = CNT + 1 WHERE NUM=?";
+		String query = "DELETE FROM BOARD WHERE NUM=?";
 		int ret = -1; // 쿼리가 정상적으로 안 들어가면 -1이 반환됨.
 		try {
 			con = ju.getConnection();
